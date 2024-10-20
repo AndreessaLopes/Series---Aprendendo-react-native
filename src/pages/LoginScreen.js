@@ -61,9 +61,11 @@ export default class LoginPage extends React.Component {
 
   tryLogin() {
     this.setState({ isLoading: true, message: "" });
+    const { navigation } = this.props;
     const { email, password } = this.state;
     const loginUserSuccess = (user) => {
       this.setState({ message: "Sucesso!" });
+      navigation.navigate("main");
     };
 
     const loginUserFailed = (error) => {
